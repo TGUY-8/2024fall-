@@ -31,12 +31,20 @@ void swap(int* x , int* y)
 
 void bubble_sort(int* a , int len)
 {
+	int swapped;
 	for(int i = 0 ; i < len - 1 ; i++)
 	{
+		swapped = 1;
 		for(int j = 0 ; j < len - i - 1 ; j++)
 		{
+
 			if(a[j] > a[j+1])
+			{
 			swap(&a[j] , &a[j+1]);
+			swapped = 0;
+			}
 		}
+		if(swapped)
+		break;
 	}
 }
